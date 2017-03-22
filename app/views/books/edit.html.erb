@@ -1,0 +1,10 @@
+<%= form_tag("/books/#{@book.id}", method: :patch) do %>
+
+  <label for="">ISBN</label>
+  <%= text_field_tag("book[isbn]") %>
+
+  <label for="">Description</label>
+  <%= text_area_tag("book[description]") %>
+
+  <%= submit_tag %>
+<% end %>

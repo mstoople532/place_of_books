@@ -1,0 +1,29 @@
+<h1>Books in Collection</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>ISBN</th>
+      <th>description</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.isbn %></td>
+      <td><%= book.description %></td>
+      <td> <a href="/books/<%= book.id %>/edit">edit</a></td>
+      <td>
+        <form class="/books/<%= book.id %>" action="index.html" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="btn btn-xs btn-danger" type="submit" name="" value="delete">
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
