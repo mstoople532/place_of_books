@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Book</th>
+      <th>Return Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%=reservation.reservation_name%></td>
+        <td><%=reservation.book&.name%></td>
+        <td><%= reservation.returned %></td>
+        <td><%= button_to("Mark Returned", "reservations/#{reservation.id}", method: :patch, params: {reservation:{returned: Time.now}})  %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>

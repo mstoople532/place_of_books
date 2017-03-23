@@ -1,0 +1,11 @@
+<%= form_tag "/reservations" do %>
+  <label for="">Reservation Name</label>
+  <%= text_field_tag("reservation[reservation_name]") %>
+
+  <label for="">Due Date</label>
+  <%= date_field_tag("reservation[due_date]") %>
+
+  <%= hidden_field_tag("reservation[book_id]", "#{@book.id}") %>
+
+  <%= submit_tag %>
+<% end %>

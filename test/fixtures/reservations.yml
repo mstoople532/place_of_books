@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_name: MyString
+  book_id: 1
+  checked_out: 2017-03-22 13:50:33
+  due_date: 2017-03-22
+  returned: 2017-03-22 13:50:33
+
+two:
+  reservation_name: MyString
+  book_id: 1
+  checked_out: 2017-03-22 13:50:33
+  due_date: 2017-03-22
+  returned: 2017-03-22 13:50:33

@@ -8,6 +8,7 @@
       <th>description</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,12 +18,8 @@
       <td><%= book.isbn %></td>
       <td><%= book.description %></td>
       <td> <a href="/books/<%= book.id %>/edit">edit</a></td>
-      <td>
-        <form class="/books/<%= book.id %>" action="index.html" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input class="btn btn-xs btn-danger" type="submit" name="" value="delete">
-        </form>
-      </td>
+      <td> <%= link_to("delete", "/books/#{book.id}", method: :delete) %></td>
+      <td> <%= link_to("reserve", "/reservations/#{book.id}/new") %></td>
     </tr>
     <% end %>
   </tbody>

@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   patch "/books/:id", controller: "books", action: "update"
 
-  delete "/books/:id", controller: "books", action: "delete"
+  delete "/books/:id", controller: "books", action: "destroy"
+
+  resources :reservations
+
+  get "/reservations/:book_id/new", controller: "reservations", action: "new"
 end
